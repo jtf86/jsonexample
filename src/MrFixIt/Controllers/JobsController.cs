@@ -42,8 +42,21 @@ namespace MrFixIt.Controllers
         [HttpPost]
         public IActionResult Claim(Job job)
         {
+            //This is broken. Throws exception that 0 rows were changed.
+            job.Worker = job.FindWorker(User.Identity.Name);
             db.Entry(job).State = EntityState.Modified;
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                foreach (var entry in ex.Entries)
+                {
+                    Console.WriteLine(entry);
+                }
+
+            }
             return RedirectToAction("Index");
         }
     }

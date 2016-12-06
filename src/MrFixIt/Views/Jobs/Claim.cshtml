@@ -9,8 +9,11 @@
 <hr />
 @using (Html.BeginForm())
 {
+    @Html.HiddenFor(model => model.JobId)
+    @Html.HiddenFor(model => model.Title)
+    @Html.HiddenFor(model => model.Description)
+
     <h4>@Model.Title</h4>
-    @Html.HiddenFor(model => Model.Worker, new { @value = @Model.FindWorker(User.Identity.Name) })
     <input type="submit" value="Claim This Job" />
 }
 <p>@Html.ActionLink("Back to list", "Index")</p>
