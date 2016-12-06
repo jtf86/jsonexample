@@ -3,12 +3,14 @@
 *@
 @{
 }
+@model MrFixIt.Models.Job
 
 <h2>Would you like to do this job?</h2>
 <hr />
 @using (Html.BeginForm())
 {
     <h4>@Model.Title</h4>
+    @Html.HiddenFor(model => Model.Worker, new { @value = @Model.FindWorker(User.Identity.Name) })
     <input type="submit" value="Claim This Job" />
 }
 <p>@Html.ActionLink("Back to list", "Index")</p>

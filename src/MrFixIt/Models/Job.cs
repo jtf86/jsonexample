@@ -22,5 +22,11 @@ namespace MrFixIt.Models
             Pending = false;
             Worker = null;
         }
+
+        public Worker FindWorker(string UserName)
+        {
+            Worker thisWorker = new MrFixItContext().Workers.FirstOrDefault(i => i.UserName == UserName);
+            return thisWorker;
+        }
     }
 }
