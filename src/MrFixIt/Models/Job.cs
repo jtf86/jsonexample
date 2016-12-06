@@ -18,9 +18,6 @@ namespace MrFixIt.Models
 
         public Job()
         {
-            Completed = false;
-            Pending = false;
-            Worker = null;
         }
 
         public Worker FindWorker(string UserName)

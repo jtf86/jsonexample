@@ -216,12 +216,8 @@ C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Controllers\AccountController.cs
 C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Controllers\HomeController.cs
 C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Controllers\JobsController.cs
 C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Controllers\WorkersController.cs
-C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Migrations\20161206003321_FixDbContextProblems.cs
-C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Migrations\20161206003321_FixDbContextProblems.Designer.cs
-C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Migrations\20161206013855_UpdateWorkerProfile.cs
-C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Migrations\20161206013855_UpdateWorkerProfile.Designer.cs
-C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Migrations\20161206210124_MakeWorkerIdExplicit.cs
-C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Migrations\20161206210124_MakeWorkerIdExplicit.Designer.cs
+C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Migrations\20161206233149_Initial.cs
+C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Migrations\20161206233149_Initial.Designer.cs
 C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Migrations\MrFixItContextModelSnapshot.cs
 C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Models\ApplicationUser.cs
 C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Models\Job.cs

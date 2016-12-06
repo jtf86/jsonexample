@@ -45,18 +45,7 @@ namespace MrFixIt.Controllers
             //This is broken. Throws exception that 0 rows were changed.
             job.Worker = job.FindWorker(User.Identity.Name);
             db.Entry(job).State = EntityState.Modified;
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException ex)
-            {
-                foreach (var entry in ex.Entries)
-                {
-                    Console.WriteLine(entry);
-                }
-
-            }
+            db.SaveChanges(true);
             return RedirectToAction("Index");
         }
     }

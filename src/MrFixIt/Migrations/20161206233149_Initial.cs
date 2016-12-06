@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace MrFixIt.Migrations
 {
-    public partial class MakeWorkerIdExplicit : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -174,7 +174,7 @@ namespace MrFixIt.Migrations
                     Description = table.Column<string>(nullable: true),
                     Pending = table.Column<bool>(nullable: false),
                     Title = table.Column<string>(nullable: true),
-                    WorkerId = table.Column<int>(nullable: false)
+                    WorkerId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -184,7 +184,7 @@ namespace MrFixIt.Migrations
                         column: x => x.WorkerId,
                         principalTable: "Workers",
                         principalColumn: "WorkerId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
