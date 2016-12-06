@@ -17,7 +17,7 @@ namespace MrFixIt.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            return View(db.Jobs.ToList());
         }
 
         public IActionResult Create()
@@ -28,23 +28,15 @@ namespace MrFixIt.Controllers
         [HttpPost]
         public IActionResult Create(Job job)
         {
-            //var thisWorker = db.Workers.FirstOrDefault(item => item.UserName == User.Identity.Name);
-            //job.Worker = thisWorker;
-            //thisWorker.Avaliable = false;
             db.Jobs.Add(job);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public IActionResult AssignJob(Job job)
-        {
-            var thisWorker = db.Workers.FirstOrDefault(item => item.UserName == User.Identity.Name);
-            job.Worker = thisWorker;
-            thisWorker.Avaliable = false;
-            db.Entry(job).State = EntityState.Modified;
-            db.SaveChanges();
-            return RedirectToAction("Index");   
-        }
+        //[HttpPost]
+        //public IActionResult AssignJob(Job job)
+        //{
+        //    return RedirectToAction("Index");   
+        //}
     }
 }
