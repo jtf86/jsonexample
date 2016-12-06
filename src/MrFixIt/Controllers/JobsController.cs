@@ -45,7 +45,7 @@ namespace MrFixIt.Controllers
             //This is broken. Throws exception that 0 rows were changed.
             job.Worker = job.FindWorker(User.Identity.Name);
             db.Entry(job).State = EntityState.Modified;
-            db.SaveChanges(true);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
     }
