@@ -11,20 +11,13 @@
 <hr />
 @if (User.Identity.IsAuthenticated)
 {
+    <h4>Hello @User.Identity.Name!</h4>
 
-    <div class="text-center">
-        <h4>Hello Worker @Model.FirstName @Model.LastName. You are Logged In</h4>
-        @if (Model.Avaliable)
-        {
-            <h2>Please @Html.ActionLink("select a job", "Index", "Jobs").</h2>
-        } else
-        {
-            <p>You are already assigned to a job.</p>
-        }
-    </div>
-}
-else
+} else
 {
     <p>@Html.ActionLink("Register", "Register")</p>
     <p>@Html.ActionLink("Log in", "Login")</p>
 }
+
+
+

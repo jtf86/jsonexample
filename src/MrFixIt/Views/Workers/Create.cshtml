@@ -16,7 +16,7 @@
     <hr />
     @if (User.Identity.IsAuthenticated)
     {
-        <h4>Create your worker profile</h4>
+        <h4>You do not have a complete worker profile. Please create your worker profile</h4>
         @using (Html.BeginForm())
         {
             @Html.LabelFor(model => model.FirstName)
@@ -27,7 +27,6 @@
 
             <input type="submit" value="Register" />
         }
-        <p>@Html.ActionLink("Back", "Index")</p>
     }
 
 

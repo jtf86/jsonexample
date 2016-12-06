@@ -15,7 +15,15 @@ namespace MrFixIt.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            var thisWorker = db.Workers.FirstOrDefault(i => i.UserName == User.Identity.Name);
+            if (thisWorker != null)
+            {
+                return View(thisWorker);
+            }
+            else
+            {
+                return RedirectToAction("Create");
+            }
         }
 
         public IActionResult Create()

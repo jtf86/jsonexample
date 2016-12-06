@@ -216,6 +216,8 @@
 "C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Migrations\20161206003321_FixDbContextProblems.Designer.cs"
 "C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Migrations\20161206013855_UpdateWorkerProfile.cs"
 "C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Migrations\20161206013855_UpdateWorkerProfile.Designer.cs"
+"C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Migrations\20161206210124_MakeWorkerIdExplicit.cs"
+"C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Migrations\20161206210124_MakeWorkerIdExplicit.Designer.cs"
 "C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Migrations\MrFixItContextModelSnapshot.cs"
 "C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Models\ApplicationUser.cs"
 "C:\Users\jfran\Desktop\MrFixIt\src\MrFixIt\Models\Job.cs"
