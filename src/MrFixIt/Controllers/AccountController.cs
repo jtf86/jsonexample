@@ -13,6 +13,9 @@ namespace MrFixIt.Controllers
 {
     public class AccountController : Controller
     {
+        private MrFixItContext db = new MrFixItContext();
+
+
         //Basic User Account Info here...
         private readonly MrFixItContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
@@ -25,10 +28,25 @@ namespace MrFixIt.Controllers
             _db = db;
         }
 
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
+
         public IActionResult Index()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                var thisWorker = db.Workers.FirstOrDefault(item => item.UserName == User.Identity.Name);
+                return View(thisWorker);
+            }
+            else
+            {
+                return View();
+            }
         }
+
+
         public IActionResult Register()
         {
             return View();

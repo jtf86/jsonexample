@@ -20,6 +20,7 @@ namespace MrFixIt.Models
         {
             Completed = false;
             Pending = false;
+            Worker = null;
         }
     }
 }

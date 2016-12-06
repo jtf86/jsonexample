@@ -27,6 +27,7 @@ namespace MrFixIt.Controllers
         [HttpPost]
         public IActionResult Create(Worker worker)
         {
+            worker.UserName = User.Identity.Name;
             db.Workers.Add(worker); 
             db.SaveChanges();
             return RedirectToAction("Index");
