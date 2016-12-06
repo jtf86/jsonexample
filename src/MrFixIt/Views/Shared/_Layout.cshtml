@@ -29,12 +29,18 @@
                     <li>
                         @Html.ActionLink("Hire Us", "Index", "Jobs")
                     </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>
+                            @Html.ActionLink("Log Out", "LogOff", "Account")
+                        </li>
+                    }
 
                 </ul>
             </div>
         </div>
     </nav>
-    <div>
+    <div class="container">
         @RenderBody()
     </div>
 </body>

@@ -13,7 +13,13 @@ namespace MrFixIt.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public bool Completed { get; set; }
+        public bool Pending { get; set; }
         public virtual Worker Worker { get; set; }
 
+        public Job()
+        {
+            Completed = false;
+            Pending = false;
+        }
     }
 }
