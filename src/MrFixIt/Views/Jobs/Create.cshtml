@@ -3,6 +3,9 @@
 *@
 @{
 
+}
+
+@model MrFixIt.Models.Job
 
     <h2>Create new Job</h2>
         <hr />
@@ -10,7 +13,9 @@
         @using (Html.BeginForm())
         {
             @Html.LabelFor(model => model.Title)
-            @Html.TextBoxFor(model => model.Title)
+            @Html.TextBoxFor(model => model.Title, new { @required = "true" })
+            @Html.LabelFor(model => model.Description)
+            @Html.TextBoxFor(model => model.Description, new { @required = "true" })
             <input type="submit" value="Add new job" />
         }
         <p>@Html.ActionLink("Back to list", "Index")</p>

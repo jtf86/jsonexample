@@ -3,8 +3,17 @@
 *@
 @{
 }
+<div class="text-center">
+    <h3>Our Current Jobs</h3>
+    @Html.ActionLink("Add a new job", "Create")
+</div>
+@foreach (var Job in Model)
+{
+    <ul>
+        <li>@Job.Title</li>
+        <ul>
+            <li>@Job.Description</li>
+        </ul>
+    </ul>
+}
 
-
-<p>This is the Jobs Page</p>
-
-@Html.ActionLink("Home", "Index", "Home")
