@@ -32,6 +32,13 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>
+                            @Html.ActionLink("Worker Dashboard", "Index", "Workers")
+                        </li>
+                    }
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>
                             @Html.ActionLink("Log Out", "LogOff", "Account")
                         </li>
                     }

@@ -17,18 +17,17 @@
     @if (User.Identity.IsAuthenticated)
     {
         <h4>Create your worker profile</h4>
-            @using (Html.BeginForm())
-            {
-                @Html.LabelFor(model => model.FirstName)
-                @Html.TextBoxFor(model => model.FirstName)
-                @Html.LabelFor(model => model.LastName)
-                @Html.TextBoxFor(model => model.LastName)
-                @Model.UserName = User.Identity.Name;
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(model => model.FirstName)
+            @Html.TextBoxFor(model => model.FirstName)
+            @Html.LabelFor(model => model.LastName)
+            @Html.TextBoxFor(model => model.LastName)
 
 
-                <input type="submit" value="Register" />
-            }
-            <p>@Html.ActionLink("Back", "Index")</p>
+            <input type="submit" value="Register" />
+        }
+        <p>@Html.ActionLink("Back", "Index")</p>
     }
 
 
