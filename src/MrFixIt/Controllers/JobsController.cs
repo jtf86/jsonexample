@@ -17,7 +17,7 @@ namespace MrFixIt.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View(db.Jobs.ToList());
+            return View(db.Jobs.Include(i => i.Worker).ToList());
         }
 
         public IActionResult Create()
@@ -42,8 +42,7 @@ namespace MrFixIt.Controllers
         [HttpPost]
         public IActionResult Claim(Job job)
         {
-            //This is broken. Throws exception that 0 rows were changed.
-            job.Worker = job.FindWorker(User.Identity.Name);
+            job.Worker = db.Workers.FirstOrDefault(i => i.UserName == User.Identity.Name);
             db.Entry(job).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");

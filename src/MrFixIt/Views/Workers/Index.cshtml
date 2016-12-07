@@ -4,11 +4,18 @@
 @{
 }
 
+
 @if (User.Identity.IsAuthenticated)
 {
 
     <div class="text-center">
         <h4>Hello Worker @Model.FirstName @Model.LastName. You are Logged In</h4>
+        <h3>Your Current Jobs:</h3>
+        @foreach (var Job in Model.Jobs)
+        {
+            <h5>@Job.Title</h5>
+
+        }
         @if (Model.Avaliable)
         {
             <h2>Please @Html.ActionLink("select a job", "Index", "Jobs").</h2>
